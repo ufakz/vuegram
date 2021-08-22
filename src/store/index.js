@@ -103,7 +103,7 @@ const store = new Vuex.Store({
     },
     async likePost({ commit }, post) {
       const userId = fb.auth.currentUser.uid
-      const docId = `${userId}_${postId}`
+      const docId = `${userId}_${post.id}`
 
       //check if user has liked post
       const doc = await fb.likesCollection.doc(docId).get()
@@ -117,7 +117,7 @@ const store = new Vuex.Store({
 
       //update post likes count
       fb.postsCollection.doc(post.id).update({
-        likes: post.likes + 1
+        likes: parseInt(post.likes + 1)
       })
     },
     async logout({ commit }) {

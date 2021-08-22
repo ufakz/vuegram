@@ -4,13 +4,7 @@ import 'firebase/firestore'
 
 //firebase init 
 const firebaseConfig = {
-  apiKey: "AIzaSyBJ7brCqAQ5DqKdBW9RRKSfolbjD8mGLHw",
-  authDomain: "vue-gram-95fbe.firebaseapp.com",
-  databaseURL: "https://vue-gram-95fbe.firebaseio.com",
-  projectId: "vue-gram-95fbe",
-  storageBucket: "vue-gram-95fbe.appspot.com",
-  messagingSenderId: "216327489445",
-  appId: "1:216327489445:web:7d6ae279f318051abf4a4c"
+  //add your firebase config here
 }
 
 firebase.initializeApp(firebaseConfig)

@@ -52,10 +52,10 @@
             <p>{{post.content | trimLength}}</p>
             <ul>
               <li>
-                <a @click="toggleCommentModal(post)">comments {{posts.comments}}</a>
+                <a @click="toggleCommentModal(post)">comments {{post.comments}}</a>
               </li>
               <li>
-                <a @click="likePost(post.id,post.likes)">likes {{posts.likes}}</a>
+                <a @click="likePost(post.id,post.likes)">likes {{post.likes}}</a>
               </li>
               <li>
                 <a @click="viewPost(post)">view full post</a>
@@ -110,15 +110,15 @@ export default {
         this.selectedPost = {};
       }
     },
-    likePost(id, likesCount) {
-      this.$store.dispatch("likePost", { id, likesCount });
+    likePost(id, likes) {
+      this.$store.dispatch("likePost", { id, likes });
     },
     async viewPost(post){
       const docs = await commentsCollection.where('postId','==',post.id).get()
 
       docs.forEach(doc => {
         const comment = doc.data()
-        commet.id = doc.id
+        comment.id = doc.id
         this.postComments.push(comment)
       })
 
