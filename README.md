@@ -1,9 +1,12 @@
-# vuegram
+# Vuegram
+Vuegram is a minimalist room social media app built using VueJS and Firebase Firestore. It features a clean and neat UI.
 
 ## Project setup
 ```
 npm install
 ```
+Then, import your firebase configuration into the firebase.js file for initialization
+
 
 ### Compiles and hot-reloads for development
 ```
